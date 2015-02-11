@@ -4,7 +4,8 @@
   "description": "",
   "main": "app/index.html",
   "dependencies": {
-    "node-kickass": "^0.2.0"
+    "node-kickass": "^0.2.0",
+    "nw": "^0.12.0-alpha2"
   },
   "devDependencies": {},
   "author": "",
