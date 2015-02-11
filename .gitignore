@@ -1,3 +1,8 @@
+*.css
+*.map
+.idea
+download
+
 # Logs
 logs
 *.log
