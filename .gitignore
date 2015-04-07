@@ -2,7 +2,7 @@
 *.map
 .idea
 download
-app/lib/*
+app/lib
 
 # Logs
 logs

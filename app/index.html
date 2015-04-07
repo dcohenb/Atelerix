@@ -1,15 +1,38 @@
 <html ng-app="app">
 <head>
     <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular-route/angular-route.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 </head>
-<body ng-controller="MainCtrl">
-<div class="files">
-    <img ng-src="{{'../' + torrent.album_cover}}" width="100" alt=""/>
-    <div ng-repeat="file in torrent.files">
-        {{file.name}} - {{file.progress}}
+<body>
+<div class="header" ng-controller="HeaderCtrl">
+    <nav>
+        <a ui-sref="home">Home</a>
+        <a ui-sref="settings">Settings</a>
+    </nav>
+
+    <form ng-submit="searchSubmitHandler()" name="searchForm">
+        <label for="search_box">Search</label>
+        <input id="search_box" type="text" ng-model="searchQuery" required/>
+        <input type="submit"/>
+    </form>
+</div>
+<div ui-view></div>
+
+<div ng-controller="DownloadCtrl">
+    <div class="files">
+        <img ng-src="{{'../' + torrent.album_cover}}" width="100" alt=""/>
+
+        <div ng-repeat="file in torrent.files">
+            {{file.name}} - {{file.progress}}
+        </div>
     </div>
 </div>
+
+<script src="js/app.js"></script>
+<script src="js/components/HeaderCtrl.js"></script>
+<script src="js/views/HomeCtrl.js"></script>
+<script src="js/views/SettingsCtrl.js"></script>
+<script src="js/views/SearchCtrl.js"></script>
+<script src="js/views/ArtistCtrl.js"></script>
 </body>
 </html>

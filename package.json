@@ -4,6 +4,7 @@
   "description": "",
   "main": "app/index.html",
   "dependencies": {
+    "musicbrainz": "^0.2.4",
     "node-kickass": "^0.2.0",
     "nw": "^0.12.0-alpha2",
     "webtorrent": "^0.27.1"

@@ -1,0 +1,10 @@
+<h1>Search</h1>
+<table class="results">
+    <tr ng-repeat="result in results">
+        <td>
+            <a ui-sref="artist({artist_id:result.id})">{{result.name}}</a>
+        </td>
+        <td>{{result.type}}</td>
+    </tr>
+</table>
+<pre>{{results | json}}</pre>
