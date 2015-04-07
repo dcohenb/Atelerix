@@ -1,8 +1,8 @@
 /**
  * Created by Daniel on 4/7/2015.
  */
-app.controller('HeaderCtrl', function DownloadCtrl($scope) {
-    var WebTorrent = require('webtorrent'),
+app.controller('DownloadCtrl', function DownloadCtrl($scope) {
+    /*var WebTorrent = require('webtorrent'),
         fs = require('fs'),
         path = require('path'),
         client = new WebTorrent();
@@ -68,5 +68,5 @@ app.controller('HeaderCtrl', function DownloadCtrl($scope) {
 
         $scope.torrent = torrent;
         $scope.$apply();
-    })
+    })*/
 });
