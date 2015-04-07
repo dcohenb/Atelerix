@@ -1,0 +1,12 @@
+<h1>{{artist.name}} ({{artist.lifeSpan.begin | date:'short'}})</h1>
+<small>{{artist.country}}</small>
+
+<h1>Torrent lookup</h1>
+<table class="results">
+    <tr ng-repeat="item in searchResults track by $index">
+        <td>
+            <a ng-click="downloadTorrent(item['torrent:magneturi']['#'])">{{item.title}}</a>
+        </td>
+        <td>{{item['torrent:seeds']['#']}}</td>
+    </tr>
+</table>

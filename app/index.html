@@ -5,11 +5,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="lib/lodash/lodash.min.js"></script>
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 </head>
 <body>
-<div class="header" ng-controller="HeaderCtrl">
+<header ng-controller="HeaderCtrl">
     <nav>
         <a ui-sref="home">Home</a>
         <a ui-sref="settings">Settings</a>
@@ -20,22 +21,29 @@
         <input id="search_box" type="text" ng-model="searchQuery" required/>
         <input type="submit"/>
     </form>
+</header>
+
+
+<div ng-controller="DownloadCtrl" style="background: #efefef;">
+    <div ng-repeat="item in queue">
+        <b>{{item.status}}</b>
+        <ul>
+            <li ng-repeat="(name, info) in item.files">
+                {{name}} - {{info.progress}}
+            </li>
+        </ul>
+    </div>
 </div>
+
 <div ui-view></div>
 
-<!--<div ng-controller="DownloadCtrl">
-    <div class="files">
-        <img ng-src="{{'../' + torrent.album_cover}}" width="100" alt=""/>
-
-        <div ng-repeat="file in torrent.files">
-            {{file.name}} - {{file.progress}}
-        </div>
-    </div>
-</div>-->
-
 <script src="js/app.js"></script>
+
+<script src="js/service/dlm.service.js"></script>
+
 <script src="js/components/HeaderCtrl.js"></script>
 <script src="js/components/DownloadCtrl.js"></script>
+
 <script src="js/views/HomeCtrl.js"></script>
 <script src="js/views/SettingsCtrl.js"></script>
 <script src="js/views/SearchCtrl.js"></script>

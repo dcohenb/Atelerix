@@ -8,22 +8,22 @@ app.config(function ($urlRouterProvider, $stateProvider) {
     $stateProvider
         .state('home', {
             url: "/home",
-            templateUrl: "partials/Home.html",
+            templateUrl: "partials/views/Home.html",
             controller: 'HomeCtrl'
         })
         .state('search', {
             url: "/search/:query",
-            templateUrl: "partials/Search.html",
+            templateUrl: "partials/views/Search.html",
             controller: 'SearchCtrl'
         })
         .state('artist', {
             url: "/artist/:artist_id",
-            templateUrl: "partials/Artist.html",
+            templateUrl: "partials/views/Artist.html",
             controller: 'ArtistCtrl'
         })
         .state('settings', {
             url: "/settings",
-            templateUrl: "partials/Settings.html",
+            templateUrl: "partials/views/Settings.html",
             controller: 'SettingsCtrl'
         });
 });
